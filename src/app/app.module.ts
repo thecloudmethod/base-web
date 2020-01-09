@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { DragulaModule } from 'ng2-dragula';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { DefaultComponent } from './views/default/default.component';
+import { HomeComponent } from './views/home/home.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { WindowService } from './services/window/window.service';
 
@@ -19,12 +18,11 @@ export function getWindow() {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [DefaultComponent, HomeComponent],
   imports: [
     AngularMaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    DragulaModule.forRoot(),
     // Add .withServerTransition() to support Universal rendering.
     // The application ID can be any identifier which is unique on
     // the page.
@@ -50,6 +48,6 @@ export function getWindow() {
       useFactory: getWindow,
     },
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [DefaultComponent],
 })
 export class AppModule {}

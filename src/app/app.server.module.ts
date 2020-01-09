@@ -3,7 +3,7 @@ import {ServerModule, ServerTransferStateModule} from '@angular/platform-server'
 import {ModuleMapLoaderModule} from '@nguniversal/module-map-ngfactory-loader';
 
 import {AppModule} from './app.module';
-import {AppComponent} from './app.component';
+import { DefaultComponent } from './views/default/default.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UniversalInterceptorService } from './modules/shared/interceptors/universal-interceptor.service';
 import { WindowService } from './services/window/window.service';
@@ -23,7 +23,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   ],
   // Since the bootstrapped component is not inherited from your
   // imported AppModule, it needs to be repeated here.
-  bootstrap: [AppComponent],
+  bootstrap: [DefaultComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
